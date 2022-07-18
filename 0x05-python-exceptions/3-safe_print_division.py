@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-
-"""dividing an integer"""
+#divide
 def safe_print_division(a, b):
-    que = 0
     try:
         quo = a / b
     except(ZeroDivisionError):
