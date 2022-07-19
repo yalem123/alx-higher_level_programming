@@ -8,4 +8,4 @@ def safe_print_division(a, b):
         print("u cant divide by zero")
     finally:
         print("i hope its sucess")
-        return 
+        return quo
