@@ -4,7 +4,7 @@ class square defines size
 """
 
 
-class square:
+class Square:
     """ class square defines size """
     def __init__(self, size):
         self.__size = size
