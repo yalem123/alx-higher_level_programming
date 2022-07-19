@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-#divide
 def safe_print_division(a, b):
+    num1, num2 = input("enter values : ").split()
     try:
-        quo = a / b
+        quo = int(num1) / int(num2)
+        print("{} / {} = {}" .format(num1, num2, quo))
     except(ZeroDivisionError):
-        quo = None
+        print("u cant divide by zero")
     finally:
-        print("Inside result: {}".format(quo))
+        print("i hope its sucess")
         return 
