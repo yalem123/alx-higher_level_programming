@@ -7,6 +7,7 @@ class square which defines private attribute
 class square:
     """ class square which defines private attribute """
     def __init__(self, size=0):
+       """ class square which defines private attribute """
         if (type(size) is not int):
             raise (TypeError("size must be an integer"))
         elif (size < 0):
