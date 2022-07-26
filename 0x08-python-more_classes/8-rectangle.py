@@ -42,78 +42,77 @@ class Rectangle():
         Function to print a Square with the print_symbol
         """
 
-    if self.__width == 0 or self.__height == 0:
-        return ""
+        if self.__width == 0 or self.__height == 0:
+            return ""
 
-    final = [str(self.print_symbol) * self.__width
-             for character in range(self.__height)]
+        final = [str(self.print_symbol) * self.__width
+                 for character in range(self.__height)]
 
-    return '\n'.join(final)
-    
-  def __repr__(self):
-      """Returns an “official” string representation of a Rectangle"""
-      return f'Rectangle({self.__width}, {self.__height})'
+        return '\n'.join(final)
 
-  def __del__(self):
-      """Prints a message when a Rectangle instance is deleted"""
-      print('Bye rectangle...')
-      Rectangle.number_of_instances -= 1
- 
- @property
- def width(self):
-     """Getter of the property width"""
-     return self.__width
+    def __repr__(self):
+        """Returns an “official” string representation of a Rectangle"""
+        return f'Rectangle({self.__width}, {self.__height})'
 
- @width.setter
- def width(self, value):
-     """
-     Getter of the property value
-       Args:
-         - value: int
-    """
-    if not isinstance(value, int):
-        raise TypeError('width must be an integer')
+    def __del__(self):
+        """Prints a message when a Rectangle instance is deleted"""
+        print('Bye rectangle...')
+        Rectangle.number_of_instances -= 1
 
-    if value < 0:
-        raise ValueError('width must be >= 0')
+    @property
+    def width(self):
+        """Getter of the property width"""
+        return self.__width
 
-    self.__width = value
+    @width.setter
+    def width(self, value):
+        """
+        Getter of the property value
+          Args:
+            - value: int
+        """
+        if not isinstance(value, int):
+            raise TypeError('width must be an integer')
 
- @property
- def height(self):
-     """Getter of the property height"""
-     return self.__height
+        if value < 0:
+            raise ValueError('width must be >= 0')
 
- @height.setter
- def height(self, value):
-     """
-     Getter of the property value
-       Args:
-         - value: int
-     """
-     if not isinstance(value, int):
-         raise TypeError('height must be an integer')
+        self.__width = value
 
-     if value < 0:
-         raise ValueError('height must be >= 0')
+    @property
+    def height(self):
+        """Getter of the property height"""
+        return self.__height
 
-     self.__height = value
+    @height.setter
+    def height(self, value):
+        """
+        Getter of the property value
+          Args:
+            - value: int
+        """
+        if not isinstance(value, int):
+            raise TypeError('height must be an integer')
 
- @staticmethod
- def bigger_or_equal(rect_1, rect_2):
-     """
-     Return the biggest rectangle based on the area
-       Args:
-         - rect_1: Rectangle
-         - rect_2: Rectangle
-    """
-    if not isinstance(rect_1, Rectangle):
-        raise TypeError("rect_1 must be an instance of Rectangle")
+        if value < 0:
+            raise ValueError('height must be >= 0')
 
-    if not isinstance(rect_2, Rectangle):
-        raise TypeError("rect_2 must be an instance of Rectangle")
+        self.__height = value
 
-    if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
-        return rect_1
-    return rect_2
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Return the biggest rectangle based on the area
+          Args:
+            - rect_1: Rectangle
+            - rect_2: Rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
 
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+            return rect_1
+        return rect_2
