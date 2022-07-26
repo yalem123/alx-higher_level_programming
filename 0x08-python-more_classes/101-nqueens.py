@@ -52,7 +52,7 @@ def isSafe(m_queen, nqueen):
         m_queen[nqueen] = -1
 
         while((m_queen[nqueen] < len(m_queen) - 1)):
-
+            
             m_queen[nqueen] += 1
 
             if isSafe(m_queen, nqueen) is True:
@@ -60,8 +60,9 @@ def isSafe(m_queen, nqueen):
                 if nqueen is not len(m_queen):
                     Queen(m_queen, nqueen + 1)
 
-        def solveNQueen(size):
-            """Function that invokes the Backtracking algorithm
+
+    def solveNQueen(size):
+        """ Function that invokes the Backtracking algorithm
         Args:
             size: size of the chessboard
         """
@@ -70,9 +71,10 @@ def isSafe(m_queen, nqueen):
 
         Queen(m_queen, 0)
 
-        if __name__ == '__main__':
 
-            import sys
+    if __name__ == '__main__':
+
+        import sys
 
         if len(sys.argv) == 1 or len(sys.argv) > 2:
             print("Usage: nqueens N")
